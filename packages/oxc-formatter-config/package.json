@@ -1,6 +1,6 @@
 {
   "name": "@puffcoco/oxc-formatter-config",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "OXC formatter configuration",
   "author": "owen",
   "license": "MIT",
