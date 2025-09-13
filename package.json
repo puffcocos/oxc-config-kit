@@ -1,0 +1,20 @@
+{
+  "name": "root",
+  "private": true,
+  "version": "0.0.0",
+  "description": "oxc config kit monorepo",
+  "author": "owen",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.9"
+  },
+  "packageManager": "pnpm@10.13.1"
+}
