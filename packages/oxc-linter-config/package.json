@@ -1,0 +1,23 @@
+{
+  "name": "@puffcoco/oxc-linter-config",
+  "version": "0.0.0",
+  "description": "OXC linter configuration",
+  "author": "owen",
+  "license": "MIT",
+  "type": "module",
+  "main": "./oxlint-frontend.json",
+  "files": [
+    "oxlint-frontend.json"
+  ],
+  "keywords": [
+    "oxc",
+    "linter",
+    "config"
+  ],
+  "devDependencies": {
+    "oxlint": "^1.15.0"
+  },
+  "peerDependencies": {
+    "oxlint": "^1.15.0"
+  }
+}
