@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "oxc config kit monorepo",
-  "author": "owen",
+  "author": "puffcocos",
   "license": "MIT",
   "workspaces": [
     "packages/*"
