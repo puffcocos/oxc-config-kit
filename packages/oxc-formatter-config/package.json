@@ -1,8 +1,8 @@
 {
-  "name": "@puffcoco/oxc-formatter-config",
+  "name": "@puffcocos/oxc-formatter-config",
   "version": "0.0.1",
   "description": "OXC formatter configuration",
-  "author": "owen",
+  "author": "puffcocos",
   "license": "MIT",
   "type": "module",
   "main": "./prettier.config.js",
