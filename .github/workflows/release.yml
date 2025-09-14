@@ -28,7 +28,7 @@ jobs:
         run: |
           cat << EOF > "$HOME/.npmrc"
             //registry.npmjs.org/:_authToken=$NPM_TOKEN
-            @puffcocos:registry=https://npm.pkg.github.com
+            @puffcoco:registry=https://npm.pkg.github.com
             always-auth=true
           EOF
         env:

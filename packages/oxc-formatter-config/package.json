@@ -1,5 +1,5 @@
 {
-  "name": "@puffcocos/oxc-formatter-config",
+  "name": "@puffcoco/oxc-formatter-config",
   "version": "0.0.2",
   "description": "OXC formatter configuration",
   "author": "puffcocos",
@@ -16,7 +16,7 @@
     "config"
   ],
   "publishConfig": {
-    "@puffcocos:registry": "https://npm.pkg.github.com"
+    "@puffcoco:registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@prettier/plugin-oxc": "^0.0.4",
