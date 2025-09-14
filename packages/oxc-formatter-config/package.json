@@ -15,6 +15,9 @@
     "formatter",
     "config"
   ],
+  "publishConfig": {
+    "@puffcocos:registry": "https://npm.pkg.github.com"
+  },
   "devDependencies": {
     "@prettier/plugin-oxc": "^0.0.4",
     "prettier": "^3.6.2"

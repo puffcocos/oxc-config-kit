@@ -22,6 +22,17 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 22.x
+          registry-url: https://npm.pkg.github.com/
+
+      - name: Creating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            @puffcocos:registry=https://npm.pkg.github.com
+            always-auth=true
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install Dependencies
         run: pnpm install
@@ -33,4 +44,3 @@ jobs:
           publish: pnpm changeset:release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
