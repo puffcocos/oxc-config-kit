@@ -1,5 +1,5 @@
 {
-  "name": "@puffcocos/oxc-linter-config",
+  "name": "@puffcoco/oxc-linter-config",
   "version": "0.0.2",
   "description": "OXC linter configuration",
   "author": "puffcocos",
@@ -15,7 +15,7 @@
     "config"
   ],
   "publishConfig": {
-    "@puffcocos:registry": "https://npm.pkg.github.com"
+    "@puffcoco:registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "oxlint": "^1.15.0"
