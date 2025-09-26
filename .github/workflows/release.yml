@@ -27,7 +27,7 @@ jobs:
       - name: Creating .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            //npm.pkg.github.com/:_authToken=$NPM_TOKEN
             @puffcocos:registry=https://npm.pkg.github.com
             always-auth=true
           EOF
