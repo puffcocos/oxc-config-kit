@@ -1,5 +1,11 @@
 # @puffcoco/oxc-linter-config
 
+## 0.0.6
+
+### Patch Changes
+
+- 2571462: Update packages
+
 ## 0.0.5
 
 ### Patch Changes
