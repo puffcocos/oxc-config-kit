@@ -1,7 +1,7 @@
 {
-  "name": "@puffcoco/oxc-formatter-config",
-  "version": "0.0.3",
-  "description": "OXC formatter configuration",
+  "name": "@puffcocos/oxc-formatter-config",
+  "version": "0.0.2",
+  "description": "oxc formatter configuration",
   "author": "puffcocos",
   "license": "MIT",
   "type": "module",
@@ -15,8 +15,12 @@
     "formatter",
     "config"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puffcocos/oxc-config-kit"
+  },
   "publishConfig": {
-    "@puffcoco:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@prettier/plugin-oxc": "^0.0.4",
