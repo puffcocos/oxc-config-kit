@@ -1,7 +1,7 @@
 {
-  "name": "@puffcoco/oxc-linter-config",
-  "version": "0.0.3",
-  "description": "OXC linter configuration",
+  "name": "@puffcocos/oxc-linter-config",
+  "version": "0.0.2",
+  "description": "oxc linter configuration",
   "author": "puffcocos",
   "license": "MIT",
   "type": "module",
@@ -14,8 +14,12 @@
     "linter",
     "config"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puffcocos/oxc-config-kit"
+  },
   "publishConfig": {
-    "@puffcoco:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "oxlint": "^1.15.0"
