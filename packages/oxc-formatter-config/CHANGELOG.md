@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- e5db6d2: package namespace 변경
+
+## 0.0.3
+
+### Patch Changes
+
 - ca9e5bc: package publish scope 변경
 
 ## 0.0.2
