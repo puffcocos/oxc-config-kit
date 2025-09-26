@@ -1,6 +1,6 @@
 {
   "name": "@puffcocos/oxc-linter-config",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "oxc linter configuration",
   "author": "puffcocos",
   "license": "MIT",
