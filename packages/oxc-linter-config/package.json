@@ -5,9 +5,11 @@
   "author": "puffcocos",
   "license": "MIT",
   "type": "module",
-  "main": "./oxlint-frontend.json",
+  "main": "./oxlint-common.json",
   "files": [
-    "oxlint-frontend.json"
+    "oxlint-common.json",
+    "oxlint-react.json",
+    "oxlint-node.json"
   ],
   "keywords": [
     "oxc",
