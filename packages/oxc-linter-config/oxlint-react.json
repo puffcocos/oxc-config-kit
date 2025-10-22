@@ -1,0 +1,27 @@
+{
+  "plugins": ["react", "nextjs", "jsx-a11y"],
+  "rules": {
+    "react/button-has-type": "warn",
+    "react/forward-ref-uses-ref": "error",
+    "react/jsx-boolean-value": ["warn", "never", { "assumeUndefinedIsFalse": true }],
+    "react/jsx-handler-names": [
+      "warn",
+      {
+        "eventHandlerPrefix": "handle",
+        "eventHandlerPropPrefix": "on"
+      }
+    ],
+    "react/jsx-no-useless-fragment": ["warn", { "allowExpressions": true }],
+    "react/jsx-pascal-case": "error",
+    "react/no-namespace": "error",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react/style-prop-object": "error",
+    "react/void-dom-elements-no-children": "error"
+  }
+}
