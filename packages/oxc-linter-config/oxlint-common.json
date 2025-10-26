@@ -1,0 +1,56 @@
+{
+  "plugins": ["eslint", "promise"],
+  "rules": {
+    "eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_+$", "ignoreRestSiblings": true }],
+    "eslint/no-useless-catch": "warn",
+    "eslint/valid-typeof": ["error", { "requireStringLiterals": true }],
+    "eslint/array-callback-return": ["error", { "allowImplicit": true, "checkForEach": true }],
+    "eslint/block-scoped-var": "warn",
+    "eslint/curly": ["error", "all"],
+    "eslint/default-case-last": "error",
+    "eslint/eqeqeq": ["error", "always", { "null": "ignore" }],
+    "eslint/func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    "eslint/max-depth": ["warn", { "max": 4 }],
+    "eslint/no-console": ["error", { "allow": ["info", "warn", "error"] }],
+    "eslint/no-duplicate-imports": ["error", { "allowSeparateTypeImports": true }],
+    "eslint/no-plusplus": "error",
+    "eslint/no-var": "error",
+    "eslint/prefer-rest-params": "error",
+    "eslint/prefer-spread": "error",
+    "eslint/prefer-template": "error",
+    "eslint/require-await": "error",
+
+    "import/named": "off",
+    "import/default": "off",
+    "import/namespace": "off",
+    "import/no-namespace": "error",
+    "import/no-self-import": "error",
+    "import/first": "error",
+    "import/no-unassigned-import": ["error", { "allow": ["**/*.css", "**/*.scss"] }]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "plugins": ["typescript"],
+      "rules": {
+        "eslint/no-unused-vars": "off",
+        "typescript/no-unused-vars": [
+          "error",
+          { "argsIgnorePattern": "^_+$", "ignoreRestSiblings": true }
+        ],
+
+        "typescript/array-type": ["error", { "default": "array" }],
+        "typescript/consistent-indexed-object-style": ["error", "record"],
+        "typescript/consistent-type-definitions": ["error", "interface"],
+        "typescript/consistent-type-imports": [
+          "error",
+          { "prefer": "type-imports", "fixStyle": "separate-type-imports" }
+        ],
+        "typescript/no-import-type-side-effects": "error",
+        "typescript-eslint/prefer-enum-initializers": "error",
+        "typescript/prefer-function-type": "error",
+        "typescript/prefer-literal-enum-member": "error"
+      }
+    }
+  ]
+}
