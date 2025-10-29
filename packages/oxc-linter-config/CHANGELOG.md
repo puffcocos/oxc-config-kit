@@ -1,5 +1,11 @@
 # @puffcoco/oxc-linter-config
 
+## 0.0.7
+
+### Patch Changes
+
+- 2b54617: Implement oxc linter rules
+
 ## 0.0.6
 
 ### Patch Changes
