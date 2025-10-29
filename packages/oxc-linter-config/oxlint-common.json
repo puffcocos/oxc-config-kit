@@ -19,14 +19,18 @@
     "eslint/prefer-spread": "error",
     "eslint/prefer-template": "error",
     "eslint/require-await": "error",
-
     "import/named": "off",
     "import/default": "off",
     "import/namespace": "off",
     "import/no-namespace": "error",
     "import/no-self-import": "error",
     "import/first": "error",
-    "import/no-unassigned-import": ["error", { "allow": ["**/*.css", "**/*.scss"] }]
+    "import/no-unassigned-import": ["error", { "allow": ["**/*.css", "**/*.scss"] }],
+    "promise/catch-or-return": ["error", { "allowFinally": true }],
+    "promise/prefer-await-to-callbacks": "error",
+    "promise/prefer-await-to-then": "error",
+    "promise/no-multiple-resolved": "error",
+    "promise/spec-only": "warn"
   },
   "overrides": [
     {
