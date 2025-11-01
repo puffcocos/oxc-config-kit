@@ -1,5 +1,11 @@
 # @puffcoco/oxc-formatter-config
 
+## 0.0.8
+
+### Patch Changes
+
+- a4636cd: Use jsPlugins preview feature
+
 ## 0.0.7
 
 ### Patch Changes

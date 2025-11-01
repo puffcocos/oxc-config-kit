@@ -1,6 +1,6 @@
 {
   "name": "@cocopalm/oxc-formatter-config",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "oxc formatter configuration",
   "author": "puffcocos",
   "license": "MIT",
