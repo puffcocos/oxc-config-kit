@@ -1,5 +1,6 @@
 {
   "plugins": ["react", "nextjs", "jsx-a11y"],
+  "jsPlugins": ["eslint-plugin-react-hooks"],
   "rules": {
     "react/button-has-type": "warn",
     "react/forward-ref-uses-ref": "error",
@@ -22,6 +23,9 @@
       }
     ],
     "react/style-prop-object": "error",
-    "react/void-dom-elements-no-children": "error"
+    "react/void-dom-elements-no-children": "error",
+    "eslint-plugin-react-hooks/rules-of-hooks": "error",
+    "eslint-plugin-react-hooks/exhaustive-deps": "warn",
+    "eslint-plugin-react-hooks/use-memo": "error"
   }
 }
