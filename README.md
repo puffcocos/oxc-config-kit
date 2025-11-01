@@ -4,13 +4,8 @@ A collection of configuration packages for OXC toolchain.
 
 ## Packages
 
-- [`@oxc-config-kit/formatter-config`](./packages/oxc-formatter-config) - Prettier configuration with OXC plugin
-
-## Installation
-
-```bash
-pnpm add @oxc-config-kit/formatter-config
-```
+- [`@cocopalm/oxc-linter-config`](./packages/oxc-linter-config) - ESLint configuration with OXC plugin
+- [`@cocopalm/oxc-formatter-config`](./packages/oxc-formatter-config) - Prettier configuration with OXC plugin
 
 ## Development
 
@@ -30,4 +25,4 @@ pnpm changeset:release
 
 ## License
 
-MIT
+MIT License

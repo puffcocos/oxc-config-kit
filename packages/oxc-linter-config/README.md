@@ -2,6 +2,12 @@
 
 > ⚠️ oxc linter는 현재 활발히 개발 진행중인 라이브러리입니다. 그로 인해 버전간의 주요 변경사항이 존재할 수 있습니다.
 
+## Installation
+
+```bash
+pnpm add @cocopalm/oxc-linter-config
+```
+
 ## How to use
 
 프로젝트 루트 디렉토리에 `.oxlintrc.json` 을 생성합니다.  
