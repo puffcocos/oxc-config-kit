@@ -1,6 +1,5 @@
 {
   "plugins": ["eslint", "promise"],
-  "jsPlugins": ["eslint-plugin-react-hooks"],
   "rules": {
     "eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_+$", "ignoreRestSiblings": true }],
     "eslint/no-useless-catch": "warn",
