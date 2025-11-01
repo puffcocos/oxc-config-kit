@@ -1,5 +1,11 @@
 # @puffcoco/oxc-linter-config
 
+## 0.0.9
+
+### Patch Changes
+
+- 1a85c6c: Fix js plugins rules
+
 ## 0.0.8
 
 ### Patch Changes
