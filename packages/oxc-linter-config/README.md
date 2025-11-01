@@ -10,7 +10,12 @@ pnpm add @cocopalm/oxc-linter-config
 
 ## How to use
 
-프로젝트 루트 디렉토리에 `.oxlintrc.json` 을 생성합니다.  
+프로젝트 루트 디렉토리에 `.oxlintrc.json` 을 생성합니다.
+
+```bash
+touch .oxlintrc.json
+```
+
 적용하고자 하는 린트 규칙을 `extends` 필드에 정의해주세요.
 
 - `oxlint-common.json`
@@ -27,6 +32,25 @@ pnpm add @cocopalm/oxc-linter-config
   "extends": [
     "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
     "node_modules/@cocopalm/oxc-linter-config/oxlint-react.json"
+  ]
+}
+```
+
+규칙을 오버라이드하고 싶다면 `overrides` 필드를 사용해주세요.
+
+```json
+{
+  "extends": [
+    "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
+    "node_modules/@cocopalm/oxc-linter-config/oxlint-react.json"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.{ts,tsx}"],
+      "rules": {
+        "eslint/no-unused-vars": "off"
+      }
+    }
   ]
 }
 ```
