@@ -1,5 +1,11 @@
 # @puffcoco/oxc-linter-config
 
+## 0.0.10
+
+### Patch Changes
+
+- f03f4f8: remove jsPlugins
+
 ## 0.0.9
 
 ### Patch Changes
