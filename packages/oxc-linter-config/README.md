@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-pnpm add @cocopalm/oxc-linter-config
+pnpm add oxlint @cocopalm/oxc-linter-config
 ```
 
 ## How to use
@@ -18,6 +18,17 @@ touch .oxlintrc.json
 
 적용하고자 하는 린트 규칙을 `extends` 필드에 정의해주세요.
 
+```json
+// .oxlintrc.json
+
+{
+  "extends": [
+    "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
+    "node_modules/@cocopalm/oxc-linter-config/oxlint-react.json"
+  ]
+}
+```
+
 - `oxlint-common.json`
   - `javascript`, `typescript`, `import` 와 같은 공용 린트 플러그인입니다.
 - `oxlint-react.json`
@@ -25,14 +36,14 @@ touch .oxlintrc.json
 - `oxlint-node.json`
   - `node.js` 기반 백엔드 서비스의 린트 플러그인입니다.
 
-### 👀 Example
+린트 러너 스크립트를 `package.json` 에 추가해주세요.
 
 ```json
 {
-  "extends": [
-    "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
-    "node_modules/@cocopalm/oxc-linter-config/oxlint-react.json"
-  ]
+  "scripts": {
+    "lint": "oxlint .",
+    "lint:fix": "oxlint . --fix"
+  }
 }
 ```
 
@@ -64,9 +75,15 @@ touch .oxlintrc.json
 
 👉 [github issue](https://github.com/oxc-project/oxc/issues/481)
 
-### Caveat
+<br />
 
-v1 기준으로 다음 eslint-plugin들의 **`not recommended`** 규칙들은 미구현 상태로 인해서 현재 적용되어있지 않습니다.
+## Caveat
+
+1. v1 기준으로 다음 eslint-plugin들의 **`not recommended`** 규칙들은 미구현 상태로 인해서 현재 적용되어있지 않습니다.
 
 - [eslint-core](./docs/eslint-core.md)
 - [eslint-react](./docs/eslint-react.md)
+
+2. `react compiler` 관련 규칙들은 아직 oxc linter react plugin에서 지원하지 않기 때문에 적용되어있지 않습니다.
+
+- [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
