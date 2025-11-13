@@ -1,5 +1,11 @@
 # @puffcoco/oxc-formatter-config
 
+## 0.0.11
+
+### Patch Changes
+
+- 526c367: Add jsx-a11y rules
+
 ## 0.0.10
 
 ### Patch Changes
