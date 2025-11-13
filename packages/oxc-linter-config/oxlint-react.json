@@ -22,7 +22,17 @@
       }
     ],
     "react/style-prop-object": "error",
-    "react/void-dom-elements-no-children": "error"
+    "react/void-dom-elements-no-children": "error",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/img-redundant-alt": "warn",
+    "jsx-a11y/media-has-caption": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "warn",
+    "jsx-a11y/no-redundant-roles": "warn",
+    "jsx-a11y/role-has-required-aria-props": "warn",
+    "jsx-a11y/role-supports-aria-props": "warn",
+    "jsx-a11y/tabindex-no-positive": "warn",
+    "jsx-a11y/prefer-tag-over-role": "warn"
   },
   "ignorePatterns": [
     "node_modules/**",
