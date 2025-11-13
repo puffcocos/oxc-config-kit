@@ -354,17 +354,17 @@ TypeScript 파일(`*.ts`, `*.tsx`)에만 적용되는 규칙들입니다.
 
 ---
 
-## 🔥 React Rules
+## 🔥 FE Rules
 
 `oxlint-react.json`에 정의된 React 프로젝트 전용 규칙들입니다.
 
-### 플러그인
+### 📌 React Rules
 
 - `react`: React 관련 규칙
 - `nextjs`: Next.js 관련 규칙
 - `jsx-a11y`: 접근성(a11y) 관련 규칙
 
-### `react/button-has-type`
+#### `react/button-has-type`
 
 ```json
 "warn"
@@ -372,7 +372,7 @@ TypeScript 파일(`*.ts`, `*.tsx`)에만 적용되는 규칙들입니다.
 
 **이유**: `<button>` 요소는 명시적으로 `type` 속성을 지정해야 합니다. 기본값이 `submit`이므로 의도하지 않은 폼 제출이 발생할 수 있습니다.
 
-### `react/forward-ref-uses-ref`
+#### `react/forward-ref-uses-ref`
 
 ```json
 "error"
@@ -380,7 +380,7 @@ TypeScript 파일(`*.ts`, `*.tsx`)에만 적용되는 규칙들입니다.
 
 **이유**: `forwardRef`로 래핑된 컴포넌트는 실제로 ref를 사용해야 합니다. 사용하지 않으면 불필요한 래핑입니다.
 
-### `react/jsx-boolean-value`
+#### `react/jsx-boolean-value`
 
 ```json
 ["warn", "never", { "assumeUndefinedIsFalse": true }]
@@ -388,7 +388,7 @@ TypeScript 파일(`*.ts`, `*.tsx`)에만 적용되는 규칙들입니다.
 
 **이유**: boolean props에 명시적으로 `={true}`를 작성하는 것을 지양합니다. `<Component isActive />`가 더 간결합니다.
 
-### `react/jsx-handler-names`
+#### `react/jsx-handler-names`
 
 ```json
 [
@@ -405,7 +405,7 @@ TypeScript 파일(`*.ts`, `*.tsx`)에만 적용되는 규칙들입니다.
 - 함수: `handleClick`, `handleChange`
 - Props: `onClick`, `onChange`
 
-### `react/jsx-no-useless-fragment`
+#### `react/jsx-no-useless-fragment`
 
 ```json
 ["warn", { "allowExpressions": true }]
@@ -413,7 +413,7 @@ TypeScript 파일(`*.ts`, `*.tsx`)에만 적용되는 규칙들입니다.
 
 **이유**: 불필요한 Fragment(`<>...</>`)를 제거하여 코드를 간결하게 유지합니다. 표현식은 허용합니다.
 
-### `react/jsx-pascal-case`
+#### `react/jsx-pascal-case`
 
 ```json
 "error"
@@ -421,7 +421,7 @@ TypeScript 파일(`*.ts`, `*.tsx`)에만 적용되는 규칙들입니다.
 
 **이유**: React 컴포넌트는 PascalCase를 사용하여 HTML 요소와 구분합니다.
 
-### `react/no-namespace`
+#### `react/no-namespace`
 
 ```json
 "error"
@@ -429,7 +429,7 @@ TypeScript 파일(`*.ts`, `*.tsx`)에만 적용되는 규칙들입니다.
 
 **이유**: JSX에서 namespace(예: `<Namespace.Component>`)를 사용하지 않도록 합니다. React에서는 지원하지 않습니다.
 
-### `react/self-closing-comp`
+#### `react/self-closing-comp`
 
 ```json
 [
@@ -443,7 +443,7 @@ TypeScript 파일(`*.ts`, `*.tsx`)에만 적용되는 규칙들입니다.
 
 **이유**: 자식이 없는 컴포넌트와 HTML 요소는 자체 닫기 태그(`<Component />`)를 사용하여 코드를 간결하게 만듭니다.
 
-### `react/style-prop-object`
+#### `react/style-prop-object`
 
 ```json
 "error"
@@ -451,13 +451,97 @@ TypeScript 파일(`*.ts`, `*.tsx`)에만 적용되는 규칙들입니다.
 
 **이유**: `style` prop은 반드시 객체여야 합니다. 문자열을 허용하면 XSS 취약점이 발생할 수 있습니다.
 
-### `react/void-dom-elements-no-children`
+#### `react/void-dom-elements-no-children`
 
 ```json
 "error"
 ```
 
 **이유**: `<img>`, `<br>`, `<input>` 등의 void 요소는 자식을 가질 수 없습니다. 이를 방지하여 HTML 표준을 준수합니다.
+
+### 📌 JSX A11y Rules (접근성)
+
+접근성(Accessibility)은 모든 사용자가 웹 애플리케이션을 사용할 수 있도록 보장하는 중요한 요소입니다.
+
+#### `jsx-a11y/click-events-have-key-events`
+
+```json
+"off"
+```
+
+**이유**: 클릭 이벤트에 대응하는 키보드 이벤트를 강제하는 규칙입니다. 현재는 off로 설정되어 있지만, 접근성을 위해 프로젝트에 따라 활성화를 고려할 수 있습니다.
+
+#### `jsx-a11y/img-redundant-alt`
+
+```json
+"warn"
+```
+
+**이유**: 이미지의 `alt` 텍스트에 "image", "photo", "picture" 등의 중복된 단어를 사용하는 것을 경고합니다. 스크린 리더가 이미 이미지임을 알려주므로 불필요합니다.
+
+#### `jsx-a11y/media-has-caption`
+
+```json
+"off"
+```
+
+**이유**: 비디오나 오디오 요소에 자막을 요구하는 규칙입니다. 현재는 off로 설정되어 있지만, 접근성을 위해 프로젝트에 따라 활성화를 고려할 수 있습니다.
+
+#### `jsx-a11y/mouse-events-have-key-events`
+
+```json
+"off"
+```
+
+**이유**: 마우스 이벤트에 대응하는 키보드 이벤트를 강제하는 규칙입니다. 현재는 off로 설정되어 있지만, 접근성을 위해 프로젝트에 따라 활성화를 고려할 수 있습니다.
+
+#### `jsx-a11y/no-noninteractive-tabindex`
+
+```json
+"warn"
+```
+
+**이유**: 상호작용하지 않는 요소(div, span 등)에 `tabIndex`를 설정하는 것을 경고합니다. 키보드 네비게이션의 혼란을 방지합니다.
+
+#### `jsx-a11y/no-redundant-roles`
+
+```json
+"warn"
+```
+
+**이유**: HTML 요소의 기본 역할과 동일한 `role` 속성을 중복으로 지정하는 것을 경고합니다. 예: `<button role="button">`
+
+#### `jsx-a11y/role-has-required-aria-props`
+
+```json
+"warn"
+```
+
+**이유**: 특정 ARIA `role`을 사용할 때 필수적인 ARIA 속성이 누락되지 않도록 경고합니다. 스크린 리더가 올바르게 동작하도록 보장합니다.
+
+#### `jsx-a11y/role-supports-aria-props`
+
+```json
+"warn"
+```
+
+**이유**: 특정 `role`에서 지원하지 않는 ARIA 속성을 사용하는 것을 경고합니다. 유효하지 않은 ARIA 조합을 방지합니다.
+
+#### `jsx-a11y/tabindex-no-positive`
+
+```json
+"warn"
+```
+
+**이유**: 양수 `tabIndex` 값 사용을 경고합니다. 양수 값은 키보드 네비게이션 순서를 예측하기 어렵게 만들므로 `0` 또는 `-1`만 사용하도록 권장합니다.
+
+#### `jsx-a11y/prefer-tag-over-role`
+
+```json
+"warn"
+```
+
+**이유**: ARIA `role`을 사용하는 대신 의미론적인 HTML 태그를 우선 사용하도록 권장합니다. 예: `<div role="button">` 대신 `<button>` 사용
 
 ---
 
