@@ -1,11 +1,11 @@
-# OXC Config Kit
+# oxc config kit
 
-A collection of configuration packages for OXC toolchain.
+A collection of configuration packages for oxc toolchain.
 
 ## Packages
 
-- [`@cocopalm/oxc-linter-config`](./packages/oxc-linter-config) - ESLint configuration with OXC plugin
-- [`@cocopalm/oxc-formatter-config`](./packages/oxc-formatter-config) - Prettier configuration with OXC plugin
+- [`@cocopalm/oxc-linter-config`](./packages/oxc-linter-config) - `ESLint` configuration with oxc plugin
+- [`@cocopalm/oxc-formatter-config`](./packages/oxc-formatter-config) - `Prettier` configuration with oxc plugin
 
 ## Development
 

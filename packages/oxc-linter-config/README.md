@@ -10,13 +10,22 @@ pnpm add oxlint @cocopalm/oxc-linter-config
 
 ## How to use
 
+```
+packages/oxc-linter-config/
+├── oxlint-common.json  # 모든 프로젝트에 공통 적용
+├── oxlint-react.json   # React/Next.js 프로젝트용
+└── oxlint-node.json    # Node.js 프로젝트용
+```
+
+### .oxlintrc.json 설정하기
+
 프로젝트 루트 디렉토리에 `.oxlintrc.json` 을 생성합니다.
 
 ```bash
 touch .oxlintrc.json
 ```
 
-적용하고자 하는 린트 규칙을 `extends` 필드에 정의해주세요.
+적용하고자 하는 린트 규칙을 `extends` 필드에 정의합니다.
 
 ```json
 // .oxlintrc.json
@@ -29,16 +38,11 @@ touch .oxlintrc.json
 }
 ```
 
-- `oxlint-common.json`
-  - `javascript`, `typescript`, `import` 와 같은 공용 린트 플러그인입니다.
-- `oxlint-react.json`
-  - `Next.js` 기반 프론트엔드 서비스의 린트 플러그인입니다.
-- `oxlint-node.json`
-  - `node.js` 기반 백엔드 서비스의 린트 플러그인입니다.
-
-린트 러너 스크립트를 `package.json` 에 추가해주세요.
+`package.json` 에 린트 스크립트를 추가해주세요.
 
 ```json
+// package.json
+
 {
   "scripts": {
     "lint": "oxlint .",
@@ -47,7 +51,11 @@ touch .oxlintrc.json
 }
 ```
 
-규칙을 오버라이드하고 싶다면 `overrides` 필드를 사용해주세요.
+### rule overrides (TBD)
+
+> ⚠️ 현재 overrides 동작에 이슈가 있어서 사용이 어렵습니다.
+
+린트 규칙을 오버라이드하고 싶다면 `overrides` 필드를 사용합니다.
 
 ```json
 {
@@ -65,6 +73,37 @@ touch .oxlintrc.json
   ]
 }
 ```
+
+### Examples
+
+1. **Common 규칙만 사용** (vanilla JS/TS 프로젝트)
+
+   ```json
+   {
+     "extends": ["node_modules/@cocopalm/oxc-linter-config/oxlint-common.json"]
+   }
+   ```
+
+2. **React 프로젝트**
+
+   ```json
+   {
+     "extends": [
+       "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
+       "node_modules/@cocopalm/oxc-linter-config/oxlint-react.json"
+     ]
+   }
+   ```
+
+3. **Node.js 프로젝트**
+   ```json
+   {
+     "extends": [
+       "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
+       "node_modules/@cocopalm/oxc-linter-config/oxlint-node.json"
+     ]
+   }
+   ```
 
 <br />
 
