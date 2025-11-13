@@ -107,6 +107,14 @@ touch .oxlintrc.json
 
 <br />
 
+## Lint Rules
+
+각 설정 파일에 적용된 모든 린트 규칙과 각 규칙을 추가한 이유에 대해 알고 싶다면 다음 문서를 참고해주세요.
+
+👉 [Linter Rules 설명서](./docs/linter-rules.md)
+
+<br />
+
 ## Description
 
 기존에 널리 사용중인 eslint-plugin을 oxc-linter에서 사용할 수 있도록 포팅하는 작업이 진행중입니다.  
