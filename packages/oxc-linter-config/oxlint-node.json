@@ -1,3 +1,11 @@
 {
-  "plugins": ["node"]
+  "plugins": ["node"],
+  "ignorePatterns": [
+    "node_modules/**",
+    "out/**",
+    "build/**",
+    "dist/**",
+    ".next/**",
+    "next-env.d.ts"
+  ]
 }

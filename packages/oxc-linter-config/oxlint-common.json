@@ -42,7 +42,6 @@
           "error",
           { "argsIgnorePattern": "^_+$", "ignoreRestSiblings": true }
         ],
-
         "typescript/array-type": ["error", { "default": "array" }],
         "typescript/consistent-indexed-object-style": ["error", "record"],
         "typescript/consistent-type-definitions": ["error", "interface"],
@@ -56,5 +55,13 @@
         "typescript/prefer-literal-enum-member": "error"
       }
     }
+  ],
+  "ignorePatterns": [
+    "node_modules/**",
+    "out/**",
+    "build/**",
+    "dist/**",
+    ".next/**",
+    "next-env.d.ts"
   ]
 }
