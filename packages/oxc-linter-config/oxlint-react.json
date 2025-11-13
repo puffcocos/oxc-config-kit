@@ -23,5 +23,13 @@
     ],
     "react/style-prop-object": "error",
     "react/void-dom-elements-no-children": "error"
-  }
+  },
+  "ignorePatterns": [
+    "node_modules/**",
+    "out/**",
+    "build/**",
+    "dist/**",
+    ".next/**",
+    "next-env.d.ts"
+  ]
 }
