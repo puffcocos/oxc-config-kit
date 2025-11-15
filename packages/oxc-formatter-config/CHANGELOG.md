@@ -1,5 +1,11 @@
 # @puffcoco/oxc-formatter-config
 
+## 0.0.12
+
+### Patch Changes
+
+- 167710f: Update jsx-a11y rule scope name
+
 ## 0.0.11
 
 ### Patch Changes
