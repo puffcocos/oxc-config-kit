@@ -23,8 +23,9 @@ Create a pull request for the current branch against the main branch on GitHub.
 
 **Steps:**
 
-- First, ensure all changes are committed.
+- First, ensure all prerequisites are met:
   - If there are uncommitted changes, reject this task and ask user to commit first
+  - If the branch doesn't have an upstream configured, push the branch to the remote repository first
 - Second, check all of the current branch commit ids ahead to target branch.
 - Third, gather information about the changes made in the current branch
 - Then, use the GitHub CLI to create a pull request with an appropriate title and description
