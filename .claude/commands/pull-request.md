@@ -38,10 +38,4 @@ Create a pull request for the current branch against the main branch on GitHub.
 **Pull Request Template Format:**
 
 - Title: `(<scope>): <short summary>`
-- Body:
-
-```
-## Description
-
-<detailed description of changes>
-```
+- Body: Use the format from `.github/PULL_REQUEST_TEMPLATE.md` file in the repository. Fill in the description section with a summary of changes, issues fixed, motivation, context, and any dependencies.
