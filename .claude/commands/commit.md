@@ -62,5 +62,5 @@ emoji type can be one of the following:
 ⚙️ : add/change project config file (eslintrc, prettierrc etc.)
 💩 : A piece of crappy code that needs to be written and then fixed as soon as possible
 🦋 : commit changeset file
-🚧 : work in progress 아직 작업중인데 변경 사항을 나누기 위해 임시로 커밋
+🚧 : work in progress, but commit for split large scale jobs
 🔁 : fix rebase conflict issue
