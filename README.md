@@ -1,6 +1,6 @@
 # oxc config kit
 
-A collection of configuration packages for oxc toolchain.
+A collection of configuration packages for [oxc](https://github.com/oxc-project/oxc) toolchain.
 
 ## Packages
 
