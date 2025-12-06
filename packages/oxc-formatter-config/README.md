@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-pnpm add -D prettier @cocopalm/oxc-formatter-config
+pnpm add -D prettier @prettier/plugin-oxc @cocopalm/oxc-formatter-config
 ```
 
 ## How to use
