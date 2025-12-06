@@ -1,6 +1,6 @@
 {
   "name": "@cocopalm/oxc-linter-config",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "oxc linter configuration",
   "author": "puffcocos",
   "license": "MIT",
