@@ -1,5 +1,11 @@
 # @puffcoco/oxc-formatter-config
 
+## 0.0.16
+
+### Patch Changes
+
+- 68f925a: update oxc-formatter-config document
+
 ## 0.0.15
 
 ### Patch Changes
