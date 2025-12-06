@@ -1,5 +1,11 @@
 # @puffcoco/oxc-formatter-config
 
+## 0.0.15
+
+### Patch Changes
+
+- 9e72c44: @prettier/plugin-oxc 의존성 변경
+
 ## 0.0.14
 
 ### Patch Changes
