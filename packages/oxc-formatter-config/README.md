@@ -25,7 +25,9 @@ touch .prettierrc.mjs
 ```js
 // .prettierrc.mjs
 
-'@cocopalm/oxc-formatter-config'
+import config from '@cocopalm/oxc-formatter-config'
+
+export default config
 ```
 
 `package.json` 에 포맷팅 스크립트를 추가해주세요.
@@ -50,34 +52,20 @@ touch .prettierrc.mjs
 
 import baseConfig from '@cocopalm/oxc-formatter-config'
 
-export default {
+/**
+ * @see https://prettier.io/docs/configuration
+ * @type {import("prettier").Config}
+ */
+const config = {
   ...baseConfig,
+  // 여기에 오버라이딩 설정을 작성할 수 있습니다.
   printWidth: 100,
   semi: true,
 }
+
+export default config
 ```
 
-### Examples
-
-1. **기본 설정 사용**
-
-   ```js
-   // .prettierrc.mjs
-   '@cocopalm/oxc-formatter-config'
-   ```
-
-2. **커스텀 설정 추가**
-
-   ```js
-   // .prettierrc.mjs
-   import baseConfig from '@cocopalm/oxc-formatter-config'
-
-   export default {
-     ...baseConfig,
-     printWidth: 120,
-     singleQuote: false,
-   }
-   ```
 
 <br />
 
