@@ -1,5 +1,11 @@
 # @puffcoco/oxc-formatter-config
 
+## 0.0.13
+
+### Patch Changes
+
+- 12766da: bump packages
+
 ## 0.0.12
 
 ### Patch Changes
