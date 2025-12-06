@@ -1,5 +1,11 @@
 # @puffcoco/oxc-linter-config
 
+## 0.0.14
+
+### Patch Changes
+
+- c4b0a78: support oxc-formatter-config
+
 ## 0.0.13
 
 ### Patch Changes
