@@ -51,9 +51,7 @@ touch .oxlintrc.json
 }
 ```
 
-### rule overrides (TBD)
-
-> ⚠️ 현재 overrides 동작에 이슈가 있어서 사용이 어렵습니다.
+### rule overrides
 
 린트 규칙을 오버라이드하고 싶다면 `overrides` 필드를 사용합니다.
 
