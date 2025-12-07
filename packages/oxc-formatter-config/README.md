@@ -1,6 +1,6 @@
 # oxc-formatter-config
 
-> Prettier with OXC plugin을 사용한 코드 포맷팅 설정
+이 패키지는 Prettier와 oxc 플러그인(`@prettier/plugin-oxc`)을 사용한 코드 포맷팅 설정을 제공합니다.
 
 ## Installation
 
@@ -9,8 +9,6 @@ pnpm add -D prettier @prettier/plugin-oxc @cocopalm/oxc-formatter-config
 ```
 
 ## How to use
-
-이 패키지는 Prettier의 OXC 플러그인(`@prettier/plugin-oxc`)을 사용하여 코드를 포맷팅합니다.
 
 ### .prettierrc.mjs 설정하기
 
