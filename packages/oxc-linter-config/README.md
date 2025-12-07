@@ -1,11 +1,11 @@
 # oxc-linter-config
 
-> ⚠️ oxc linter는 현재 활발히 개발 진행중인 라이브러리입니다. 그로 인해 버전간의 주요 변경사항이 존재할 수 있습니다.
+이 패키지는 oxc-linter용 공통 린트 설정을 제공합니다.
 
 ## Installation
 
 ```bash
-pnpm add oxlint @cocopalm/oxc-linter-config
+pnpm add -D oxlint @cocopalm/oxc-linter-config
 ```
 
 ## How to use
