@@ -50,7 +50,7 @@
           { "prefer": "type-imports", "fixStyle": "separate-type-imports" }
         ],
         "typescript/no-import-type-side-effects": "error",
-        "typescript-eslint/prefer-enum-initializers": "error",
+        "typescript/prefer-enum-initializers": "error",
         "typescript/prefer-function-type": "error",
         "typescript/prefer-literal-enum-member": "error"
       }
