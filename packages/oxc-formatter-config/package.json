@@ -20,7 +20,8 @@
     "url": "https://github.com/puffcocos/oxc-config-kit"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "devDependencies": {
     "prettier": "^3.7.4",
