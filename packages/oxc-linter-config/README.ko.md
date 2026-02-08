@@ -2,7 +2,7 @@
 
 [English](./README.md) | [한국어](./README.ko.md)
 
-This package provides shared lint configurations for oxc-linter.
+이 패키지는 oxc-linter용 공통 린트 설정을 제공합니다.
 
 ## Installation
 
@@ -14,20 +14,20 @@ pnpm add -D oxlint @cocopalm/oxc-linter-config
 
 ```
 packages/oxc-linter-config/
-├── oxlint-common.json  # Common rules for all projects
-├── oxlint-react.json   # For React/Next.js projects
-└── oxlint-node.json    # For Node.js projects
+├── oxlint-common.json  # 모든 프로젝트에 공통 적용
+├── oxlint-react.json   # React/Next.js 프로젝트용
+└── oxlint-node.json    # Node.js 프로젝트용
 ```
 
-### Setting up .oxlintrc.json
+### .oxlintrc.json 설정하기
 
-Create a `.oxlintrc.json` file in your project root directory.
+프로젝트 루트 디렉토리에 `.oxlintrc.json` 을 생성합니다.
 
 ```bash
 touch .oxlintrc.json
 ```
 
-Define the lint rules you want to apply in the `extends` field.
+적용하고자 하는 린트 규칙을 `extends` 필드에 정의합니다.
 
 ```json
 // .oxlintrc.json
@@ -40,7 +40,7 @@ Define the lint rules you want to apply in the `extends` field.
 }
 ```
 
-Add lint scripts to your `package.json`.
+`package.json` 에 린트 스크립트를 추가해주세요.
 
 ```json
 // package.json
@@ -53,9 +53,9 @@ Add lint scripts to your `package.json`.
 }
 ```
 
-### Rule overrides
+### rule overrides
 
-If you want to override lint rules, use the `overrides` field.
+린트 규칙을 오버라이드하고 싶다면 `overrides` 필드를 사용합니다.
 
 ```json
 {
@@ -76,7 +76,7 @@ If you want to override lint rules, use the `overrides` field.
 
 ### Examples
 
-1. **Common rules only** (vanilla JS/TS projects)
+1. **Common 규칙만 사용** (vanilla JS/TS 프로젝트)
 
    ```json
    {
@@ -84,7 +84,7 @@ If you want to override lint rules, use the `overrides` field.
    }
    ```
 
-2. **React projects**
+2. **React 프로젝트**
 
    ```json
    {
@@ -95,7 +95,7 @@ If you want to override lint rules, use the `overrides` field.
    }
    ```
 
-3. **Node.js projects**
+3. **Node.js 프로젝트**
    ```json
    {
      "extends": [
@@ -109,16 +109,16 @@ If you want to override lint rules, use the `overrides` field.
 
 ## Lint Rules
 
-To learn about all lint rules applied in each configuration file and the reasoning behind them, please refer to the following document.
+각 설정 파일에 적용된 모든 린트 규칙과 각 규칙을 추가한 이유에 대해 알고 싶다면 다음 문서를 참고해주세요.
 
-👉 [Linter Rules Reference](./docs/linter-rules.md)
+👉 [Linter Rules 설명서](./docs/linter-rules.md)
 
 <br />
 
 ## Description
 
-Work is in progress to port widely used eslint-plugins for use with oxc-linter.
-To check the progress, please refer to the following issue.
+기존에 널리 사용중인 eslint-plugin을 oxc-linter에서 사용할 수 있도록 포팅하는 작업이 진행중입니다.
+진행상황을 확인하고 싶다면 다음 이슈를 참고해주세요.
 
 👉 [github issue](https://github.com/oxc-project/oxc/issues/481)
 
@@ -126,11 +126,11 @@ To check the progress, please refer to the following issue.
 
 ## Caveat
 
-1. As of v1, the **`not recommended`** rules from the following eslint-plugins are not yet applied due to being unimplemented.
+1. v1 기준으로 다음 eslint-plugin들의 **`not recommended`** 규칙들은 미구현 상태로 인해서 현재 적용되어있지 않습니다.
 
 - [eslint-core](./docs/eslint-core.md)
 - [eslint-react](./docs/eslint-react.md)
 
-2. `react compiler` related rules are not applied because the oxc linter react plugin does not yet support them.
+2. `react compiler` 관련 규칙들은 아직 oxc linter react plugin에서 지원하지 않기 때문에 적용되어있지 않습니다.
 
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)

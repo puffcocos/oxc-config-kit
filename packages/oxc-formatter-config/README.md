@@ -1,6 +1,8 @@
 # oxc-formatter-config
 
-이 패키지는 Prettier와 oxc 플러그인(`@prettier/plugin-oxc`)을 사용한 코드 포맷팅 설정을 제공합니다.
+[English](./README.md) | [한국어](./README.ko.md)
+
+This package provides code formatting configuration using Prettier and the oxc plugin (`@prettier/plugin-oxc`).
 
 ## Installation
 
@@ -10,15 +12,15 @@ pnpm add -D prettier @prettier/plugin-oxc @cocopalm/oxc-formatter-config
 
 ## How to use
 
-### .prettierrc.mjs 설정하기
+### Setting up .prettierrc.mjs
 
-프로젝트 루트 디렉토리에 `.prettierrc.mjs` 파일을 생성합니다.
+Create a `.prettierrc.mjs` file in your project root directory.
 
 ```bash
 touch .prettierrc.mjs
 ```
 
-설정 파일에서 `@cocopalm/oxc-formatter-config`를 불러옵니다.
+Import `@cocopalm/oxc-formatter-config` in your configuration file.
 
 ```js
 // .prettierrc.mjs
@@ -28,7 +30,7 @@ import config from '@cocopalm/oxc-formatter-config'
 export default config
 ```
 
-`package.json` 에 포맷팅 스크립트를 추가해주세요.
+Add formatting scripts to your `package.json`.
 
 ```json
 // package.json
@@ -43,7 +45,7 @@ export default config
 
 ### Config Override
 
-기본 설정을 오버라이드하고 싶다면 다음과 같이 설정을 확장할 수 있습니다.
+If you want to override the default settings, you can extend the configuration as follows.
 
 ```js
 // .prettierrc.mjs
@@ -56,7 +58,7 @@ import baseConfig from '@cocopalm/oxc-formatter-config'
  */
 const config = {
   ...baseConfig,
-  // 여기에 오버라이딩 설정을 작성할 수 있습니다.
+  // Add your custom overrides here.
   printWidth: 100,
   semi: true,
 }
@@ -69,17 +71,17 @@ export default config
 
 ## Formatter Options
 
-이 패키지에 적용된 기본 포맷팅 옵션은 다음과 같습니다:
+The default formatting options applied in this package are as follows:
 
-| 옵션            | 값       | 설명                                   |
+| Option          | Value    | Description                            |
 | --------------- | -------- | -------------------------------------- |
-| printWidth      | 80       | 한 줄의 최대 길이                      |
-| tabWidth        | 2        | 들여쓰기 공백 수                       |
-| useTabs         | false    | 탭 대신 공백 사용                      |
-| semi            | false    | 문장 끝 세미콜론 제거                  |
-| singleQuote     | true     | 작은따옴표 사용                        |
-| trailingComma   | 'all'    | 가능한 모든 곳에 trailing comma 추가   |
-| arrowParens     | 'always' | 화살표 함수 매개변수에 항상 괄호 사용  |
-| plugins         | [@prettier/plugin-oxc] | OXC 플러그인 사용 |
+| printWidth      | 80       | Maximum line length                    |
+| tabWidth        | 2        | Number of spaces for indentation       |
+| useTabs         | false    | Use spaces instead of tabs             |
+| semi            | false    | Omit semicolons at the end of statements |
+| singleQuote     | true     | Use single quotes                      |
+| trailingComma   | 'all'    | Add trailing commas wherever possible  |
+| arrowParens     | 'always' | Always wrap arrow function parameters in parentheses |
+| plugins         | [@prettier/plugin-oxc] | Use OXC plugin |
 
 <br />
