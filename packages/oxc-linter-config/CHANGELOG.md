@@ -1,5 +1,11 @@
 # @puffcoco/oxc-linter-config
 
+## 0.0.20
+
+### Patch Changes
+
+- ce56246: Update provenance setting
+
 ## 0.0.19
 
 ### Patch Changes
