@@ -1,5 +1,11 @@
 # @puffcoco/oxc-linter-config
 
+## 0.0.21
+
+### Patch Changes
+
+- 38a384b: Update CI/CD nodejs version
+
 ## 0.0.20
 
 ### Patch Changes
