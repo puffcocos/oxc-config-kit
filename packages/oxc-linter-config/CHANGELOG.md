@@ -1,5 +1,11 @@
 # @puffcoco/oxc-linter-config
 
+## 0.0.17
+
+### Patch Changes
+
+- f064f17: Improve description
+
 ## 0.0.16
 
 ### Patch Changes
