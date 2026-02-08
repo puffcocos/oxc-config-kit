@@ -1,5 +1,7 @@
 # oxc config kit
 
+[English](./README.md) | [한국어](./README.ko.md)
+
 A collection of configuration packages for [oxc](https://github.com/oxc-project/oxc) toolchain.
 
 ## Packages
