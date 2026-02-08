@@ -1,5 +1,11 @@
 # @puffcoco/oxc-formatter-config
 
+## 0.0.18
+
+### Patch Changes
+
+- b4fe7a1: Fix Workflow
+
 ## 0.0.17
 
 ### Patch Changes
