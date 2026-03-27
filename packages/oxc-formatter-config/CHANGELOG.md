@@ -1,5 +1,11 @@
 # @puffcoco/oxc-formatter-config
 
+## 0.0.23
+
+### Patch Changes
+
+- 4e5ed18: Use Oxfmt package
+
 ## 0.0.22
 
 ### Patch Changes
