@@ -5,13 +5,13 @@
   "author": "puffcocos",
   "license": "MIT",
   "type": "module",
-  "main": "./prettier.config.js",
+  "main": "./oxfmt.config.ts",
   "files": [
-    "prettier.config.js"
+    "oxfmt.config.ts"
   ],
   "keywords": [
     "oxc",
-    "prettier",
+    "oxfmt",
     "formatter",
     "config"
   ],
@@ -24,11 +24,9 @@
     "provenance": true
   },
   "devDependencies": {
-    "prettier": "^3.7.4",
-    "@prettier/plugin-oxc": "^0.1.3"
+    "oxfmt": "^0.42.0"
   },
   "peerDependencies": {
-    "prettier": "^3.7.4",
-    "@prettier/plugin-oxc": "^0.1.3"
+    "oxfmt": ">=0.42.0"
   }
 }
