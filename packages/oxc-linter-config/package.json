@@ -5,12 +5,27 @@
   "author": "puffcocos",
   "license": "MIT",
   "type": "module",
-  "main": "./oxlint-common.json",
+  "main": "./dist/common.mjs",
+  "exports": {
+    "./common": {
+      "import": "./dist/common.mjs",
+      "types": "./dist/common.d.mts"
+    },
+    "./react": {
+      "import": "./dist/react.mjs",
+      "types": "./dist/react.d.mts"
+    },
+    "./node": {
+      "import": "./dist/node.mjs",
+      "types": "./dist/node.d.mts"
+    }
+  },
   "files": [
-    "oxlint-common.json",
-    "oxlint-react.json",
-    "oxlint-node.json"
+    "dist"
   ],
+  "scripts": {
+    "build": "tsdown"
+  },
   "keywords": [
     "oxc",
     "linter",
@@ -25,9 +40,11 @@
     "provenance": true
   },
   "devDependencies": {
-    "oxlint": "^1.31.0"
+    "oxlint": "^1.57.0",
+    "tsdown": "^0.21.6",
+    "typescript": "^6.0.2"
   },
   "peerDependencies": {
-    "oxlint": "^1.31.0"
+    "oxlint": "^1.57.0"
   }
 }

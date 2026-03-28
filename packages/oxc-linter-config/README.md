@@ -12,32 +12,26 @@ pnpm add -D oxlint @cocopalm/oxc-linter-config
 
 ## How to use
 
-```
-packages/oxc-linter-config/
-├── oxlint-common.json  # Common rules for all projects
-├── oxlint-react.json   # For React/Next.js projects
-└── oxlint-node.json    # For Node.js projects
-```
+### Setting up oxlint.config.ts
 
-### Setting up .oxlintrc.json
-
-Create a `.oxlintrc.json` file in your project root directory.
+Create an `oxlint.config.ts` file in your project root directory.
 
 ```bash
-touch .oxlintrc.json
+touch oxlint.config.ts
 ```
 
-Define the lint rules you want to apply in the `extends` field.
+Import the configs and combine them using `defineConfig`.
 
-```json
-// .oxlintrc.json
+```ts
+// oxlint.config.ts
 
-{
-  "extends": [
-    "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
-    "node_modules/@cocopalm/oxc-linter-config/oxlint-react.json"
-  ]
-}
+import { defineConfig } from 'oxlint'
+import commonConfig from '@cocopalm/oxc-linter-config/common'
+import reactConfig from '@cocopalm/oxc-linter-config/react'
+
+export default defineConfig({
+  extends: [commonConfig, reactConfig],
+})
 ```
 
 Add lint scripts to your `package.json`.
@@ -53,56 +47,76 @@ Add lint scripts to your `package.json`.
 }
 ```
 
-### Rule overrides
+> **Note:** oxlint loads `oxlint.config.ts` via Node.js `import()`. On **Node.js 22**, TypeScript support is not enabled by default, so you need to add `--experimental-strip-types`:
+>
+> ```json
+> {
+>   "scripts": {
+>     "lint": "NODE_OPTIONS='--experimental-strip-types' oxlint .",
+>     "lint:fix": "NODE_OPTIONS='--experimental-strip-types' oxlint . --fix"
+>   }
+> }
+> ```
+>
+> On **Node.js 23.6+**, TypeScript support is stable and no flag is needed.
 
-If you want to override lint rules, use the `overrides` field.
+### Rule Overrides
 
-```json
-{
-  "extends": [
-    "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
-    "node_modules/@cocopalm/oxc-linter-config/oxlint-react.json"
-  ],
-  "overrides": [
+```ts
+// oxlint.config.ts
+
+import { defineConfig } from 'oxlint'
+import commonConfig from '@cocopalm/oxc-linter-config/common'
+import reactConfig from '@cocopalm/oxc-linter-config/react'
+
+export default defineConfig({
+  extends: [commonConfig, reactConfig],
+  overrides: [
     {
-      "files": ["**/*.{ts,tsx}"],
-      "rules": {
-        "eslint/no-unused-vars": "off"
-      }
-    }
-  ]
-}
+      files: ['**/*.{ts,tsx}'],
+      rules: {
+        'eslint/no-unused-vars': 'off',
+      },
+    },
+  ],
+})
 ```
 
 ### Examples
 
 1. **Common rules only** (vanilla JS/TS projects)
 
-   ```json
-   {
-     "extends": ["node_modules/@cocopalm/oxc-linter-config/oxlint-common.json"]
-   }
+   ```ts
+   import { defineConfig } from 'oxlint'
+   import commonConfig from '@cocopalm/oxc-linter-config/common'
+
+   export default defineConfig({
+     extends: [commonConfig],
+   })
    ```
 
 2. **React projects**
 
-   ```json
-   {
-     "extends": [
-       "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
-       "node_modules/@cocopalm/oxc-linter-config/oxlint-react.json"
-     ]
-   }
+   ```ts
+   import { defineConfig } from 'oxlint'
+   import commonConfig from '@cocopalm/oxc-linter-config/common'
+   import reactConfig from '@cocopalm/oxc-linter-config/react'
+
+   export default defineConfig({
+     extends: [commonConfig, reactConfig],
+   })
    ```
 
 3. **Node.js projects**
-   ```json
-   {
-     "extends": [
-       "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
-       "node_modules/@cocopalm/oxc-linter-config/oxlint-node.json"
-     ]
-   }
+
+   ```ts
+   import { defineConfig } from 'oxlint'
+   import commonConfig from '@cocopalm/oxc-linter-config/common'
+   import nodeConfig from '@cocopalm/oxc-linter-config/node'
+
+   export default defineConfig({
+     extends: [commonConfig, nodeConfig],
+   })
    ```
 
 <br />
