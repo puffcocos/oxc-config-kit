@@ -22,7 +22,7 @@ touch oxfmt.config.ts
 
 설정 파일에서 `@cocopalm/oxc-formatter-config`를 불러옵니다.
 
-```js
+```ts
 // oxfmt.config.ts
 
 import config from '@cocopalm/oxc-formatter-config'
@@ -30,7 +30,7 @@ import config from '@cocopalm/oxc-formatter-config'
 export default config
 ```
 
-`package.json` 에 포맷팅 스크립트를 추가해주세요.
+`package.json`에 포맷팅 스크립트를 추가해주세요.
 
 ```json
 // package.json
@@ -43,6 +43,19 @@ export default config
 }
 ```
 
+> **참고:** oxfmt는 `oxfmt.config.ts`를 Node.js `import()`로 로드합니다. **Node.js 22**에서는 TypeScript 지원이 기본으로 활성화되어 있지 않으므로 `--experimental-strip-types` 플래그가 필요합니다:
+>
+> ```json
+> {
+>   "scripts": {
+>     "format": "NODE_OPTIONS='--experimental-strip-types' oxfmt .",
+>     "format:check": "NODE_OPTIONS='--experimental-strip-types' oxfmt . --check"
+>   }
+> }
+> ```
+>
+> **Node.js 23.6+** 에서는 TypeScript 지원이 stable로 승격되어 플래그 없이도 동작합니다.
+
 ### Config Override
 
 기본 설정을 오버라이드하고 싶다면 다음과 같이 설정을 확장할 수 있습니다.
@@ -51,13 +64,13 @@ export default config
 // oxfmt.config.ts
 
 import { defineConfig } from 'oxfmt'
-import baseConfig from '@cocopalm/oxc-formatter-config'
+import config from '@cocopalm/oxc-formatter-config'
 
 export default defineConfig({
-  ...baseConfig,
-  // 여기에 오버라이딩 설정을 작성할 수 있습니다.
+  ...config,
   printWidth: 100,
   semi: true,
+  singleQuote: true,
 })
 ```
 
