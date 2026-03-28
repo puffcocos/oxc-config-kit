@@ -12,35 +12,29 @@ pnpm add -D oxlint @cocopalm/oxc-linter-config
 
 ## How to use
 
-```
-packages/oxc-linter-config/
-├── oxlint-common.json  # 모든 프로젝트에 공통 적용
-├── oxlint-react.json   # React/Next.js 프로젝트용
-└── oxlint-node.json    # Node.js 프로젝트용
-```
+### oxlint.config.ts 설정하기
 
-### .oxlintrc.json 설정하기
-
-프로젝트 루트 디렉토리에 `.oxlintrc.json` 을 생성합니다.
+프로젝트 루트 디렉토리에 `oxlint.config.ts` 파일을 생성합니다.
 
 ```bash
-touch .oxlintrc.json
+touch oxlint.config.ts
 ```
 
-적용하고자 하는 린트 규칙을 `extends` 필드에 정의합니다.
+`defineConfig`를 사용하여 config를 불러오고 조합합니다.
 
-```json
-// .oxlintrc.json
+```ts
+// oxlint.config.ts
 
-{
-  "extends": [
-    "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
-    "node_modules/@cocopalm/oxc-linter-config/oxlint-react.json"
-  ]
-}
+import { defineConfig } from 'oxlint'
+import commonConfig from '@cocopalm/oxc-linter-config/common'
+import reactConfig from '@cocopalm/oxc-linter-config/react'
+
+export default defineConfig({
+  extends: [commonConfig, reactConfig],
+})
 ```
 
-`package.json` 에 린트 스크립트를 추가해주세요.
+`package.json`에 린트 스크립트를 추가해주세요.
 
 ```json
 // package.json
@@ -53,56 +47,76 @@ touch .oxlintrc.json
 }
 ```
 
-### rule overrides
+> **참고:** oxlint는 `oxlint.config.ts`를 Node.js `import()`로 로드합니다. **Node.js 22**에서는 TypeScript 지원이 기본으로 활성화되어 있지 않으므로 `--experimental-strip-types` 플래그가 필요합니다:
+>
+> ```json
+> {
+>   "scripts": {
+>     "lint": "NODE_OPTIONS='--experimental-strip-types' oxlint .",
+>     "lint:fix": "NODE_OPTIONS='--experimental-strip-types' oxlint . --fix"
+>   }
+> }
+> ```
+>
+> **Node.js 23.6+** 에서는 TypeScript 지원이 stable로 승격되어 플래그 없이도 동작합니다.
 
-린트 규칙을 오버라이드하고 싶다면 `overrides` 필드를 사용합니다.
+### Rule Overrides
 
-```json
-{
-  "extends": [
-    "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
-    "node_modules/@cocopalm/oxc-linter-config/oxlint-react.json"
-  ],
-  "overrides": [
+```ts
+// oxlint.config.ts
+
+import { defineConfig } from 'oxlint'
+import commonConfig from '@cocopalm/oxc-linter-config/common'
+import reactConfig from '@cocopalm/oxc-linter-config/react'
+
+export default defineConfig({
+  extends: [commonConfig, reactConfig],
+  overrides: [
     {
-      "files": ["**/*.{ts,tsx}"],
-      "rules": {
-        "eslint/no-unused-vars": "off"
-      }
-    }
-  ]
-}
+      files: ['**/*.{ts,tsx}'],
+      rules: {
+        'eslint/no-unused-vars': 'off',
+      },
+    },
+  ],
+})
 ```
 
 ### Examples
 
 1. **Common 규칙만 사용** (vanilla JS/TS 프로젝트)
 
-   ```json
-   {
-     "extends": ["node_modules/@cocopalm/oxc-linter-config/oxlint-common.json"]
-   }
+   ```ts
+   import { defineConfig } from 'oxlint'
+   import commonConfig from '@cocopalm/oxc-linter-config/common'
+
+   export default defineConfig({
+     extends: [commonConfig],
+   })
    ```
 
 2. **React 프로젝트**
 
-   ```json
-   {
-     "extends": [
-       "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
-       "node_modules/@cocopalm/oxc-linter-config/oxlint-react.json"
-     ]
-   }
+   ```ts
+   import { defineConfig } from 'oxlint'
+   import commonConfig from '@cocopalm/oxc-linter-config/common'
+   import reactConfig from '@cocopalm/oxc-linter-config/react'
+
+   export default defineConfig({
+     extends: [commonConfig, reactConfig],
+   })
    ```
 
 3. **Node.js 프로젝트**
-   ```json
-   {
-     "extends": [
-       "node_modules/@cocopalm/oxc-linter-config/oxlint-common.json",
-       "node_modules/@cocopalm/oxc-linter-config/oxlint-node.json"
-     ]
-   }
+
+   ```ts
+   import { defineConfig } from 'oxlint'
+   import commonConfig from '@cocopalm/oxc-linter-config/common'
+   import nodeConfig from '@cocopalm/oxc-linter-config/node'
+
+   export default defineConfig({
+     extends: [commonConfig, nodeConfig],
+   })
    ```
 
 <br />

@@ -1,0 +1,47 @@
+import { defineConfig } from 'oxlint'
+
+export default defineConfig({
+  plugins: ['react', 'nextjs', 'jsx-a11y'],
+  rules: {
+    'react/button-has-type': 'warn',
+    'react/forward-ref-uses-ref': 'error',
+    'react/jsx-boolean-value': ['warn', 'never', { assumeUndefinedIsFalse: true }],
+    'react/jsx-handler-names': [
+      'warn',
+      {
+        eventHandlerPrefix: 'handle',
+        eventHandlerPropPrefix: 'on',
+      },
+    ],
+    'react/jsx-no-useless-fragment': ['warn', { allowExpressions: true }],
+    'react/jsx-pascal-case': 'error',
+    'react/no-namespace': 'error',
+    'react/self-closing-comp': [
+      'error',
+      {
+        component: true,
+        html: true,
+      },
+    ],
+    'react/style-prop-object': 'error',
+    'react/void-dom-elements-no-children': 'error',
+    'jsx_a11y/click-events-have-key-events': 'off',
+    'jsx_a11y/img-redundant-alt': 'warn',
+    'jsx_a11y/media-has-caption': 'off',
+    'jsx_a11y/mouse-events-have-key-events': 'off',
+    'jsx_a11y/no-noninteractive-tabindex': 'warn',
+    'jsx_a11y/no-redundant-roles': 'warn',
+    'jsx_a11y/role-has-required-aria-props': 'warn',
+    'jsx_a11y/role-supports-aria-props': 'warn',
+    'jsx_a11y/tabindex-no-positive': 'warn',
+    'jsx_a11y/prefer-tag-over-role': 'warn',
+  },
+  ignorePatterns: [
+    'node_modules/**',
+    'out/**',
+    'build/**',
+    'dist/**',
+    '.next/**',
+    'next-env.d.ts',
+  ],
+})
