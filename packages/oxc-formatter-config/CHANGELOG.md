@@ -1,5 +1,11 @@
 # @puffcoco/oxc-formatter-config
 
+## 0.1.0
+
+### Minor Changes
+
+- 7140d59: Config oxlint.config.ts
+
 ## 0.0.25
 
 ### Patch Changes
