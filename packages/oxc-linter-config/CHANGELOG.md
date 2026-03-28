@@ -1,5 +1,11 @@
 # @puffcoco/oxc-linter-config
 
+## 0.0.24
+
+### Patch Changes
+
+- bcb8eb0: Update ts to js
+
 ## 0.0.23
 
 ### Patch Changes
