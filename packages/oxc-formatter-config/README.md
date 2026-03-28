@@ -22,7 +22,7 @@ touch oxfmt.config.ts
 
 Import `@cocopalm/oxc-formatter-config` in your configuration file.
 
-```js
+```ts
 // oxfmt.config.ts
 
 import config from '@cocopalm/oxc-formatter-config'
@@ -43,6 +43,19 @@ Add formatting scripts to your `package.json`.
 }
 ```
 
+> **Note:** oxfmt loads `oxfmt.config.ts` via Node.js `import()`. On **Node.js 22**, TypeScript support is not enabled by default, so you need to add `--experimental-strip-types`:
+>
+> ```json
+> {
+>   "scripts": {
+>     "format": "NODE_OPTIONS='--experimental-strip-types' oxfmt .",
+>     "format:check": "NODE_OPTIONS='--experimental-strip-types' oxfmt . --check"
+>   }
+> }
+> ```
+>
+> On **Node.js 23.6+**, TypeScript support is stable and no flag is needed.
+
 ### Config Override
 
 If you want to override the default settings, you can extend the configuration as follows.
@@ -51,13 +64,13 @@ If you want to override the default settings, you can extend the configuration a
 // oxfmt.config.ts
 
 import { defineConfig } from 'oxfmt'
-import baseConfig from '@cocopalm/oxc-formatter-config'
+import config from '@cocopalm/oxc-formatter-config'
 
 export default defineConfig({
-  ...baseConfig,
-  // Add your custom overrides here.
+  ...config,
   printWidth: 100,
   semi: true,
+  singleQuote: true,
 })
 ```
 
