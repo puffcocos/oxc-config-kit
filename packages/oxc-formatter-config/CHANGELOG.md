@@ -1,5 +1,11 @@
 # @puffcoco/oxc-formatter-config
 
+## 0.0.25
+
+### Patch Changes
+
+- e909c53: Build formatter config with tsdown
+
 ## 0.0.24
 
 ### Patch Changes
