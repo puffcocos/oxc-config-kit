@@ -5,10 +5,14 @@
   "author": "puffcocos",
   "license": "MIT",
   "type": "module",
-  "main": "./oxfmt.config.js",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
-    "oxfmt.config.js"
+    "dist"
   ],
+  "scripts": {
+    "build": "tsdown"
+  },
   "keywords": [
     "oxc",
     "oxfmt",
@@ -24,7 +28,9 @@
     "provenance": true
   },
   "devDependencies": {
-    "oxfmt": "^0.42.0"
+    "oxfmt": "^0.42.0",
+    "tsdown": "^0.21.6",
+    "typescript": "^6.0.2"
   },
   "peerDependencies": {
     "oxfmt": ">=0.42.0"
