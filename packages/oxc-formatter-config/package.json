@@ -5,9 +5,9 @@
   "author": "puffcocos",
   "license": "MIT",
   "type": "module",
-  "main": "./oxfmt.config.ts",
+  "main": "./oxfmt.config.js",
   "files": [
-    "oxfmt.config.ts"
+    "oxfmt.config.js"
   ],
   "keywords": [
     "oxc",
