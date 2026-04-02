@@ -10,6 +10,7 @@
   - [Promise Rules](#promise-rules)
   - [TypeScript Rules](#typescript-rules)
 - [React Rules](#react-rules)
+- [React Compiler Rules](#react-compiler-rules)
 - [Node Rules](#node-rules)
 
 ---
@@ -530,6 +531,142 @@ TypeScript 파일(`*.ts`, `*.tsx`)에만 적용되는 규칙들입니다.
 ```
 
 **이유**: ARIA `role`을 사용하는 대신 의미론적인 HTML 태그를 우선 사용하도록 권장합니다. 예: `<div role="button">` 대신 `<button>` 사용
+
+---
+
+## 🔥 React Compiler Rules
+
+`react-compiler.ts`에 정의된 React Compiler 사용 프로젝트 전용 규칙들입니다.
+
+`eslint-plugin-react-hooks`의 React Compiler 기본 권장 설정을 따릅니다. 기본적인 React Hooks 규칙(`rules-of-hooks`, `exhaustive-deps`)은 `react.ts`에서 처리하므로, 이 파일에서는 React Compiler 전용 규칙만 활성화합니다.
+
+oxlint의 JS 플러그인 기능(`jsPlugins`)을 통해 `eslint-plugin-react-hooks`를 로드합니다.
+
+### 플러그인
+
+- `eslint-plugin-react-hooks` (JS Plugin): React Compiler 관련 규칙
+
+### 📌 React Compiler Rules
+
+#### `react-hooks/config`
+
+```json
+"error"
+```
+
+**이유**: React Compiler 설정 관련 오류를 감지합니다.
+
+#### `react-hooks/error-boundaries`
+
+```json
+"error"
+```
+
+**이유**: React Compiler와 함께 사용할 때 Error Boundary의 올바른 사용을 강제합니다.
+
+#### `react-hooks/component-hook-factories`
+
+```json
+"error"
+```
+
+**이유**: 컴포넌트 내부에서 hook factory를 잘못 사용하는 패턴을 감지합니다.
+
+#### `react-hooks/gating`
+
+```json
+"error"
+```
+
+**이유**: React Compiler의 gating 기능을 올바르게 사용하도록 강제합니다.
+
+#### `react-hooks/globals`
+
+```json
+"error"
+```
+
+**이유**: React Compiler가 최적화할 수 없는 전역 변수 접근 패턴을 감지합니다.
+
+#### `react-hooks/immutability`
+
+```json
+"error"
+```
+
+**이유**: React Compiler는 불변성을 전제로 최적화하므로, 불변성을 위반하는 코드를 감지합니다.
+
+#### `react-hooks/preserve-manual-memoization`
+
+```json
+"error"
+```
+
+**이유**: 수동으로 작성된 메모이제이션(`useMemo`, `useCallback`)이 React Compiler에 의해 의도치 않게 제거되는 것을 방지합니다.
+
+#### `react-hooks/purity`
+
+```json
+"error"
+```
+
+**이유**: React Compiler는 컴포넌트와 hook의 순수성을 전제로 최적화하므로, 순수성을 위반하는 코드를 감지합니다.
+
+#### `react-hooks/refs`
+
+```json
+"error"
+```
+
+**이유**: React Compiler와 함께 사용할 때 ref의 올바른 사용 패턴을 강제합니다.
+
+#### `react-hooks/set-state-in-effect`
+
+```json
+"error"
+```
+
+**이유**: effect 내에서 setState를 잘못 사용하는 패턴을 감지합니다.
+
+#### `react-hooks/set-state-in-render`
+
+```json
+"error"
+```
+
+**이유**: 렌더 중에 setState를 직접 호출하는 패턴을 감지합니다. 무한 루프를 유발할 수 있습니다.
+
+#### `react-hooks/static-components`
+
+```json
+"error"
+```
+
+**이유**: React Compiler가 정적으로 분석할 수 없는 컴포넌트 패턴을 감지합니다.
+
+#### `react-hooks/unsupported-syntax`
+
+```json
+"warn"
+```
+
+**이유**: React Compiler가 지원하지 않는 문법 패턴을 경고합니다. 해당 코드는 컴파일러 최적화에서 제외됩니다.
+
+#### `react-hooks/use-memo`
+
+```json
+"error"
+```
+
+**이유**: `useMemo`의 잘못된 사용 패턴을 감지합니다.
+
+#### `react-hooks/incompatible-library`
+
+```json
+"warn"
+```
+
+**이유**: React Compiler와 호환되지 않는 라이브러리 사용을 경고합니다.
 
 ---
 
