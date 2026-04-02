@@ -5,11 +5,11 @@
   "author": "puffcocos",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/common.mjs",
+  "main": "./dist/base.mjs",
   "exports": {
-    "./common": {
-      "import": "./dist/common.mjs",
-      "types": "./dist/common.d.mts"
+    "./base": {
+      "import": "./dist/base.mjs",
+      "types": "./dist/base.d.mts"
     },
     "./react": {
       "import": "./dist/react.mjs",
