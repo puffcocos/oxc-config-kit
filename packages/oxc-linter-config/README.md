@@ -26,11 +26,11 @@ Import the configs and combine them using `defineConfig`.
 // oxlint.config.ts
 
 import { defineConfig } from 'oxlint'
-import commonConfig from '@cocopalm/oxc-linter-config/common'
+import baseConfig from '@cocopalm/oxc-linter-config/base'
 import reactConfig from '@cocopalm/oxc-linter-config/react'
 
 export default defineConfig({
-  extends: [commonConfig, reactConfig],
+  extends: [baseConfig, reactConfig],
 })
 ```
 
@@ -66,11 +66,11 @@ Add lint scripts to your `package.json`.
 // oxlint.config.ts
 
 import { defineConfig } from 'oxlint'
-import commonConfig from '@cocopalm/oxc-linter-config/common'
+import baseConfig from '@cocopalm/oxc-linter-config/base'
 import reactConfig from '@cocopalm/oxc-linter-config/react'
 
 export default defineConfig({
-  extends: [commonConfig, reactConfig],
+  extends: [baseConfig, reactConfig],
   overrides: [
     {
       files: ['**/*.{ts,tsx}'],
@@ -88,10 +88,10 @@ export default defineConfig({
 
    ```ts
    import { defineConfig } from 'oxlint'
-   import commonConfig from '@cocopalm/oxc-linter-config/common'
+   import baseConfig from '@cocopalm/oxc-linter-config/base'
 
    export default defineConfig({
-     extends: [commonConfig],
+     extends: [baseConfig],
    })
    ```
 
@@ -99,11 +99,11 @@ export default defineConfig({
 
    ```ts
    import { defineConfig } from 'oxlint'
-   import commonConfig from '@cocopalm/oxc-linter-config/common'
+   import baseConfig from '@cocopalm/oxc-linter-config/base'
    import reactConfig from '@cocopalm/oxc-linter-config/react'
 
    export default defineConfig({
-     extends: [commonConfig, reactConfig],
+     extends: [baseConfig, reactConfig],
    })
    ```
 
@@ -111,11 +111,11 @@ export default defineConfig({
 
    ```ts
    import { defineConfig } from 'oxlint'
-   import commonConfig from '@cocopalm/oxc-linter-config/common'
+   import baseConfig from '@cocopalm/oxc-linter-config/base'
    import nodeConfig from '@cocopalm/oxc-linter-config/node'
 
    export default defineConfig({
-     extends: [commonConfig, nodeConfig],
+     extends: [baseConfig, nodeConfig],
    })
    ```
 
@@ -145,6 +145,3 @@ To check the progress, please refer to the following issue.
 - [eslint-core](./docs/eslint-core.md)
 - [eslint-react](./docs/eslint-react.md)
 
-2. `react compiler` related rules are not applied because the oxc linter react plugin does not yet support them.
-
-- [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)

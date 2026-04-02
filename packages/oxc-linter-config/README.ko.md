@@ -26,11 +26,11 @@ touch oxlint.config.ts
 // oxlint.config.ts
 
 import { defineConfig } from 'oxlint'
-import commonConfig from '@cocopalm/oxc-linter-config/common'
+import baseConfig from '@cocopalm/oxc-linter-config/base'
 import reactConfig from '@cocopalm/oxc-linter-config/react'
 
 export default defineConfig({
-  extends: [commonConfig, reactConfig],
+  extends: [baseConfig, reactConfig],
 })
 ```
 
@@ -66,11 +66,11 @@ export default defineConfig({
 // oxlint.config.ts
 
 import { defineConfig } from 'oxlint'
-import commonConfig from '@cocopalm/oxc-linter-config/common'
+import baseConfig from '@cocopalm/oxc-linter-config/base'
 import reactConfig from '@cocopalm/oxc-linter-config/react'
 
 export default defineConfig({
-  extends: [commonConfig, reactConfig],
+  extends: [baseConfig, reactConfig],
   overrides: [
     {
       files: ['**/*.{ts,tsx}'],
@@ -88,10 +88,10 @@ export default defineConfig({
 
    ```ts
    import { defineConfig } from 'oxlint'
-   import commonConfig from '@cocopalm/oxc-linter-config/common'
+   import baseConfig from '@cocopalm/oxc-linter-config/base'
 
    export default defineConfig({
-     extends: [commonConfig],
+     extends: [baseConfig],
    })
    ```
 
@@ -99,11 +99,11 @@ export default defineConfig({
 
    ```ts
    import { defineConfig } from 'oxlint'
-   import commonConfig from '@cocopalm/oxc-linter-config/common'
+   import baseConfig from '@cocopalm/oxc-linter-config/base'
    import reactConfig from '@cocopalm/oxc-linter-config/react'
 
    export default defineConfig({
-     extends: [commonConfig, reactConfig],
+     extends: [baseConfig, reactConfig],
    })
    ```
 
@@ -111,11 +111,11 @@ export default defineConfig({
 
    ```ts
    import { defineConfig } from 'oxlint'
-   import commonConfig from '@cocopalm/oxc-linter-config/common'
+   import baseConfig from '@cocopalm/oxc-linter-config/base'
    import nodeConfig from '@cocopalm/oxc-linter-config/node'
 
    export default defineConfig({
-     extends: [commonConfig, nodeConfig],
+     extends: [baseConfig, nodeConfig],
    })
    ```
 
@@ -145,6 +145,3 @@ export default defineConfig({
 - [eslint-core](./docs/eslint-core.md)
 - [eslint-react](./docs/eslint-react.md)
 
-2. `react compiler` 관련 규칙들은 아직 oxc linter react plugin에서 지원하지 않기 때문에 적용되어있지 않습니다.
-
-- [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)

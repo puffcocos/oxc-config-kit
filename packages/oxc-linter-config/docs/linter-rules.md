@@ -4,7 +4,7 @@
 
 ## 목차
 
-- [Common Rules (공통 규칙)](#common-rules-공통-규칙)
+- [Base Rules (기본 규칙)](#base-rules-기본-규칙)
   - [ESLint Rules](#eslint-rules)
   - [Import Rules](#import-rules)
   - [Promise Rules](#promise-rules)
@@ -15,9 +15,9 @@
 
 ---
 
-## 🔥 Common Rules (공통 규칙)
+## 🔥 Base Rules (기본 규칙)
 
-`oxlint-common.json`에 정의된 규칙들로, 모든 프로젝트에 공통적으로 적용됩니다.
+`base.ts`에 정의된 규칙들로, 모든 프로젝트의 기반으로 적용됩니다.
 
 ### 📌 ESLint Rules
 
