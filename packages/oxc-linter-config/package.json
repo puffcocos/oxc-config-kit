@@ -18,6 +18,10 @@
     "./node": {
       "import": "./dist/node.mjs",
       "types": "./dist/node.d.mts"
+    },
+    "./react-compiler": {
+      "import": "./dist/react-compiler.mjs",
+      "types": "./dist/react-compiler.d.mts"
     }
   },
   "files": [
