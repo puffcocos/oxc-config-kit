@@ -1,5 +1,6 @@
 ---
 "@cocopalm/oxc-linter-config": minor
+"@cocopalm/oxc-formatter-config": patch
 ---
 
 ### Breaking Changes
