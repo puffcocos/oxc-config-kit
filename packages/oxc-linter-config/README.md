@@ -107,7 +107,26 @@ export default defineConfig({
    })
    ```
 
-3. **Node.js projects**
+3. **React projects with React Compiler**
+
+   > **Note:** Using the `/react-compiler` config requires `eslint-plugin-react-hooks` to be installed:
+   >
+   > ```bash
+   > pnpm add -D eslint-plugin-react-hooks
+   > ```
+
+   ```ts
+   import { defineConfig } from 'oxlint'
+   import baseConfig from '@cocopalm/oxc-linter-config/base'
+   import reactConfig from '@cocopalm/oxc-linter-config/react'
+   import reactCompilerConfig from '@cocopalm/oxc-linter-config/react-compiler'
+
+   export default defineConfig({
+     extends: [baseConfig, reactConfig, reactCompilerConfig],
+   })
+   ```
+
+4. **Node.js projects**
 
    ```ts
    import { defineConfig } from 'oxlint'
