@@ -1,6 +1,6 @@
 ---
 name: changeset-generator
-description: Automatically generates a changeset file by analyzing git commits and changed files since branching from main. Replaces the manual `pnpm changeset add` step — detects which packages were modified, determines the appropriate bump type, and writes a user-friendly changeset description with code examples.
+description: Automatically generates a changeset file by analyzing git commits and changed files since branching from main. Replaces the manual `pnpm changeset add` step — detects which packages were modified, determines the appropriate bump type, and writes a user-friendly changeset description with code examples. TRIGGER when: user asks to create a changeset, generate release notes for a PR, prepare version bump, or runs /changeset-generator. DO NOT TRIGGER when: user is just committing code, reviewing PRs, or asking about changelog history.
 ---
 
 # Changeset Generator
