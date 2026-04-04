@@ -72,8 +72,8 @@ Analyzes all commits since branching from `main` and generates the changeset fil
 1. Runs `git diff main...HEAD --name-only` → finds changes in `packages/ui/` and `packages/utils/`
 2. Reads commits → detects a renamed export in `@acme/ui` (breaking) + new helper added in `@acme/utils` (feature)
 3. Infers bump types → `@acme/ui: minor`, `@acme/utils: minor`
-4. Asks: "2개 패키지가 변경되었습니다. 하나의 changeset으로 묶을까요, 패키지별로 분리할까요?"
-5. User: "묶어줘"
+4. Asks: "2 packages changed. Bundle into one changeset or create separate files per package?"
+5. User: "Bundle them"
 6. Generates `.changeset/fuzzy-lions-dance.md` and shows it for review
 7. After approval, commits with `(changeset): 🦋 ...`
 
