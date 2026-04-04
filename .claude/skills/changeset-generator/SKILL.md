@@ -21,8 +21,9 @@ This skill replaces `pnpm changeset add` by automatically analyzing git changes 
    - New features, new entry points → `minor`
    - Bug fixes, dependency bumps → `patch`
    - Docs/CI/refactor with no API impact → excluded by default
-3. **Writes user-friendly description**: Transforms commit messages into clear release notes with code examples for breaking changes or new APIs
-4. **Creates the changeset file**: Writes to `.changeset/<slug>.md` and shows it for review before committing
+3. **Asks how to group**: When multiple packages are changed, asks the user whether to bundle them into a single changeset or create separate changeset files per package
+4. **Writes user-friendly description**: Transforms commit messages into clear release notes with code examples for breaking changes or new APIs
+5. **Creates the changeset file(s)**: Writes to `.changeset/<slug>.md` and shows it for review before committing
 
 ## How to Use
 
@@ -71,12 +72,14 @@ Analyzes all commits since branching from `main` and generates the changeset fil
 1. Runs `git diff main...HEAD --name-only` → finds changes in `packages/ui/` and `packages/utils/`
 2. Reads commits → detects a renamed export in `@acme/ui` (breaking) + new helper added in `@acme/utils` (feature)
 3. Infers bump types → `@acme/ui: minor`, `@acme/utils: minor`
-4. Generates `.changeset/fuzzy-lions-dance.md` and shows it for review
-5. After approval, commits with `(changeset): 🦋 ...`
+4. Asks: "2개 패키지가 변경되었습니다. 하나의 changeset으로 묶을까요, 패키지별로 분리할까요?"
+5. User: "묶어줘"
+6. Generates `.changeset/fuzzy-lions-dance.md` and shows it for review
+7. After approval, commits with `(changeset): 🦋 ...`
 
 ## Tips
 
 - Run from the repo root after all code changes are committed
 - Review the generated file before committing — bump type and description may need adjustment
-- For monorepos, each changed package gets its own bump type entry
+- In monorepos, multiple packages can be included in one changeset file, each with a different bump type (e.g., `package-a: minor`, `package-b: patch`)
 ```
