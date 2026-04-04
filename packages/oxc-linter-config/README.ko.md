@@ -107,7 +107,26 @@ export default defineConfig({
    })
    ```
 
-3. **Node.js 프로젝트**
+3. **React Compiler를 사용하는 React 프로젝트**
+
+   > **참고:** `/react-compiler` 설정을 사용하려면 `eslint-plugin-react-hooks` 패키지가 필요합니다:
+   >
+   > ```bash
+   > pnpm add -D eslint-plugin-react-hooks
+   > ```
+
+   ```ts
+   import { defineConfig } from 'oxlint'
+   import baseConfig from '@cocopalm/oxc-linter-config/base'
+   import reactConfig from '@cocopalm/oxc-linter-config/react'
+   import reactCompilerConfig from '@cocopalm/oxc-linter-config/react-compiler'
+
+   export default defineConfig({
+     extends: [baseConfig, reactConfig, reactCompilerConfig],
+   })
+   ```
+
+4. **Node.js 프로젝트**
 
    ```ts
    import { defineConfig } from 'oxlint'
