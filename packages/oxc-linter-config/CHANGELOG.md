@@ -4,40 +4,15 @@
 
 ### Patch Changes
 
-- 58e71dc: ### New Features
-
-  - Added `eslint-plugin-react-hooks` as an optional peer dependency (`^6.0.0`) for `/react-compiler` config users.
-  - Updated README with React Compiler setup example including the required `eslint-plugin-react-hooks` installation step.
+- 58e71dc: Add `eslint-plugin-react-hooks@^6.0.0` as an optional peer dependency for `/react-compiler` config users.
+- 58e71dc: Update README with a React Compiler setup example including the required `eslint-plugin-react-hooks` installation step.
 
 ## 0.2.0
 
 ### Minor Changes
 
-- 1842b59: ### Breaking Changes
-
-  - `/common` entry has been renamed to `/base`. Update your imports accordingly:
-
-    ```ts
-    // Before
-    import commonConfig from "@cocopalm/oxc-linter-config/common";
-
-    // After
-    import baseConfig from "@cocopalm/oxc-linter-config/base";
-    ```
-
-  ### New Features
-
-  - Added `/react-compiler` entry for React Compiler users. Activates React Compiler rules from `eslint-plugin-react-hooks` via oxlint's JS plugin support:
-
-    ```ts
-    import baseConfig from "@cocopalm/oxc-linter-config/base";
-    import reactConfig from "@cocopalm/oxc-linter-config/react";
-    import reactCompilerConfig from "@cocopalm/oxc-linter-config/react-compiler";
-
-    export default defineConfig({
-      extends: [baseConfig, reactConfig, reactCompilerConfig],
-    });
-    ```
+- 1842b59: Rename `/common` entry to `/base`. Update imports from `@cocopalm/oxc-linter-config/common` to `@cocopalm/oxc-linter-config/base`.
+- 1842b59: Add `/react-compiler` entry for React Compiler users, which activates React Compiler rules from `eslint-plugin-react-hooks` via oxlint's JS plugin support. Import it from `@cocopalm/oxc-linter-config/react-compiler` and include it in your `extends` array alongside `base` and `react` configs.
 
 ## 0.1.0
 
