@@ -1,5 +1,14 @@
 # @puffcoco/oxc-linter-config
 
+## 0.2.1
+
+### Patch Changes
+
+- 58e71dc: ### New Features
+
+  - Added `eslint-plugin-react-hooks` as an optional peer dependency (`^6.0.0`) for `/react-compiler` config users.
+  - Updated README with React Compiler setup example including the required `eslint-plugin-react-hooks` installation step.
+
 ## 0.2.0
 
 ### Minor Changes
