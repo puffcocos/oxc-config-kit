@@ -1,5 +1,11 @@
 # @puffcoco/oxc-linter-config
 
+## 0.2.3
+
+### Patch Changes
+
+- acdd802: - Expand `eslint-plugin-react-hooks` peer dependency range to `^6.0.0 || ^7.0.0` to support the new major version.
+
 ## 0.2.2
 
 ### Patch Changes
