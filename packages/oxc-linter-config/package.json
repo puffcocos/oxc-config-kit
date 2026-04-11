@@ -2,8 +2,20 @@
   "name": "@cocopalm/oxc-linter-config",
   "version": "0.2.2",
   "description": "oxc linter configuration",
-  "author": "puffcocos",
+  "keywords": [
+    "config",
+    "linter",
+    "oxc"
+  ],
   "license": "MIT",
+  "author": "puffcocos",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puffcocos/oxc-config-kit"
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "main": "./dist/base.mjs",
   "exports": {
@@ -24,24 +36,12 @@
       "types": "./dist/react-compiler.d.mts"
     }
   },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsdown"
-  },
-  "keywords": [
-    "oxc",
-    "linter",
-    "config"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/puffcocos/oxc-config-kit"
-  },
   "publishConfig": {
     "access": "public",
     "provenance": true
+  },
+  "scripts": {
+    "build": "tsdown"
   },
   "devDependencies": {
     "oxlint": "^1.57.0",
@@ -49,8 +49,8 @@
     "typescript": "^6.0.2"
   },
   "peerDependencies": {
-    "oxlint": "^1.57.0",
-    "eslint-plugin-react-hooks": "^6.0.0"
+    "eslint-plugin-react-hooks": "^6.0.0 || ^7.0.0",
+    "oxlint": "^1.57.0"
   },
   "peerDependenciesMeta": {
     "eslint-plugin-react-hooks": {
