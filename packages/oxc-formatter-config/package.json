@@ -2,30 +2,30 @@
   "name": "@cocopalm/oxc-formatter-config",
   "version": "0.2.0",
   "description": "oxc formatter configuration",
-  "author": "puffcocos",
+  "keywords": [
+    "config",
+    "formatter",
+    "oxc",
+    "oxfmt"
+  ],
   "license": "MIT",
-  "type": "module",
-  "main": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
+  "author": "wjdgus09",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wjdgus09/oxc-config-kit"
+  },
   "files": [
     "dist"
   ],
-  "scripts": {
-    "build": "tsdown"
-  },
-  "keywords": [
-    "oxc",
-    "oxfmt",
-    "formatter",
-    "config"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/puffcocos/oxc-config-kit"
-  },
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "publishConfig": {
     "access": "public",
     "provenance": true
+  },
+  "scripts": {
+    "build": "tsdown"
   },
   "devDependencies": {
     "oxfmt": "^0.42.0",
