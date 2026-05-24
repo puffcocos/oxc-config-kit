@@ -8,10 +8,10 @@
     "oxc"
   ],
   "license": "MIT",
-  "author": "puffcocos",
+  "author": "wjdgus09",
   "repository": {
     "type": "git",
-    "url": "https://github.com/puffcocos/oxc-config-kit"
+    "url": "https://github.com/wjdgus09/oxc-config-kit"
   },
   "files": [
     "dist"
