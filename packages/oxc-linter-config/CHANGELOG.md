@@ -1,5 +1,12 @@
 # @puffcoco/oxc-linter-config
 
+## 0.2.4
+
+### Patch Changes
+
+- 8e8728a: - Update `author` field in `package.json` from `puffcocos` to `wjdgus09`.
+  - Update `repository.url` in `package.json` to `https://github.com/wjdgus09/oxc-config-kit`.
+
 ## 0.2.3
 
 ### Patch Changes
